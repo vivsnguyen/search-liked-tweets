@@ -3,7 +3,9 @@ import requests
 
 header_info = {
     'oauth_consumer_key': os.environ['TWITTER_API_KEY'],
-    'oauth_consumer_secret': os.environ['TWITTER_API_SECRET_KEY']
+    'oauth_consumer_secret': os.environ['TWITTER_API_KEY_SECRET'],
+    'oauth_token': os.environ['TWITTER_ACCESS_TOKEN'],
+    'oauth_token_secret': os.environ['TWITTER_ACCESS_TOKEN_SECRET']
 }
 
 dane_user = 'danusinmyanus'
