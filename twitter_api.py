@@ -38,23 +38,26 @@ api = tweepy.API(auth)
 # see the name of the account print out
 print(api.me().name)
 
-# If the application settings are set for "Read and Write" then
-# this line should tweet out the message to your account's
-# timeline. The "Read and Write" setting is on https://dev.twitter.com/apps
-api.update_status(status='Updating using OAuth authentication via Tweepy!')
 
+# def get_likes_list(screen_name):
+#     """
+#     """
 
-def get_liked_list(screen_name):
-    """
-    """
+#     url = 'https://api.twitter.com/1.1/favorites/list.json'
 
-    url = 'https://api.twitter.com/1.1/favorites/list.json'
+#     params_info = {'screen_name': screen_name, 'count': 5}
 
-    params_info = {'screen_name': screen_name, 'count': 5}
-
-    response = requests.get(url,params=params_info,headers=header_info).json()
+#     response = requests.get(url,params=params_info,headers=header_info).json()
     
-    return response
+#     return response
+
+def get_likes_list(username):
+    """
+    Returns obj <class 'tweepy.models.ResultSet'> ???
+
+    how to access favorites url to embed
+    """
+    return api.favorites(username)
 
 def search():
     """
