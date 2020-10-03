@@ -3,6 +3,7 @@ import tweepy
 
 import os
 import requests
+import json
 
 # header_info = {
 #     'oauth_consumer_key': os.environ['TWITTER_API_KEY'],
@@ -53,13 +54,28 @@ print(api.me().name)
 
 def get_likes_list(username):
     """
-    Returns obj <class 'tweepy.models.ResultSet'> ???
+    Returns .
 
-    how to access favorites url to embed
+    Parameters:	
+    username
+    
+    Return type:	
+    a list of dictionaries containing status info
     """
-    return api.favorites(username)
+    likes_list = []
+
+    for status in api.favorites(username):
+        json_str = json.dumps(status._json)
+        status_json = json.loads(json_str)
+
+        likes_list.append(status_json)
+    return likes_list
+
 
 def search():
     """
     """
     pass
+
+
+# how to access favorites url to embed
