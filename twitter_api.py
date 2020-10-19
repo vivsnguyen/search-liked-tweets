@@ -69,8 +69,12 @@ def get_likes_list(username):
         status_json = json.loads(json_str)
 
         likes_list.append(status_json)
+
     return likes_list
 
+def lookup_tweet_by_id(tweet_id_str):
+    tweet = api.get_status(tweet_id_str)
+    return tweet
 
 def search():
     """
