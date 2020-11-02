@@ -13,6 +13,7 @@ Deployed using Heroku.
 
 ## <a name="tech-stack"></a>Technologies
 * Python
+* Tweepy
 
 
 ## <a name="features"></a>Features
